@@ -1,12 +1,17 @@
 pipeline {
     agent any
-
+    
+    tools {
+        // Node.js kurulumunu belirt
+        nodejs "nodejs"
+    }
+    
     stages {
         stage('Build') {
             steps {
-                // Juice Shop build adımı
-                sh 'npm install' // Örnek: Gerekli paketleri yükleme
-                sh 'npm run build' // Örnek: Uygulama yapısını oluşturma
+                // Node.js ile ilgili işlemleri buraya ekle
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
     }
