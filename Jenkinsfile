@@ -11,7 +11,7 @@ pipeline {
             steps {
                 // Node.js ile ilgili işlemleri buraya ekle
                 sh 'npm install'
-                sh 'npm run build'
+                sh 'npm run postinstall'
             }
         }
     }
