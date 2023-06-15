@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Checkov') {
             steps {
-                withCredentials([string(credentialsId: 'PC_USER', variable: 'c78b7eb1-907c-47e7-bf1d-7f9644ae1521'),string(credentialsId: 'PC_PASSWORD', variable: '991ScVUyvPdZI9AjOVrlI3v7JAc=')]) {
+                withCredentials([string(credentialsId: 'prisma_id', variable: 'pc_user'),string(credentialsId: 'prisma_key', variable: 'pc_password')]) {
                     script {
                         docker.image('bridgecrew/checkov:latest').inside("--entrypoint=''") {
                           unstash 'source'
